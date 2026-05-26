@@ -281,23 +281,33 @@ export default function Home() {
       {/* Core Services */}
       <section className="py-16 sm:py-20 md:py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Core Services We Offer for Comprehensive Care"
-            subtitle="Tap into the power of tech and human care to ensure your loved one's joy, security, and vitality. Speak to us to learn about all available services."
-          />
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-medium leading-tight text-[#2C2738] sm:text-4xl md:text-[40px] md:leading-[48px]">
+              Core Services We Offer for Comprehensive Care
+            </h2>
+            <p className="mt-5 text-base leading-7 text-zinc-600 md:text-lg md:leading-8">
+              Tap into the power of tech and human care to ensure your loved
+              one&apos;s joy, security, and vitality. Speak to us to learn
+              about all available services.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {CORE_SERVICES.map((svc) => (
               <div
                 key={svc.title}
-                className="group flex flex-col items-start gap-4 rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm ring-1 ring-black/[.03] transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="group relative h-[300px] overflow-hidden rounded-xl bg-[#EAEDF3] p-6 shadow-md transition-all duration-300 hover:bg-[#6CC57C] hover:text-white hover:shadow-lg"
               >
-                <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[#EAF2FB] text-[#4A90E2] transition-colors group-hover:bg-[#4A90E2] group-hover:text-white">
+                <div className="relative z-10">
+                  <h3 className="pb-2 text-[20px] font-semibold leading-[1.3] text-[#404040] group-hover:text-white md:text-[22px]">
+                    {svc.title}
+                  </h3>
+                  <p className="max-w-[85%] text-[14px] font-medium leading-[1.5] text-[#565656] duration-300 group-hover:text-white">
+                    {svc.desc}
+                  </p>
+                </div>
+                <div className="absolute bottom-4 right-4 flex h-28 w-28 items-center justify-center text-[#B2C2E1] transition-all duration-300 group-hover:scale-110 group-hover:text-[#83D591] [&_svg]:h-full [&_svg]:w-full">
                   {svc.icon}
                 </div>
-                <h3 className="text-base font-semibold leading-tight text-zinc-900">
-                  {svc.title}
-                </h3>
-                <p className="text-sm leading-6 text-zinc-600">{svc.desc}</p>
               </div>
             ))}
           </div>
