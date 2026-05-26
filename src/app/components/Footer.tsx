@@ -95,9 +95,16 @@ export default function Footer() {
 
           <div className="lg:col-span-3">
             <h3 className="text-base font-semibold text-zinc-900">Our Services</h3>
-            <ul className="mt-5 space-y-2 text-sm text-zinc-600">
+            <ul className="mt-5 space-y-2 text-sm">
               {SERVICES.map((svc) => (
-                <li key={svc}>{svc}</li>
+                <li key={svc}>
+                  <a
+                    href="#"
+                    className="text-zinc-600 transition-colors hover:text-[#4A90E2]"
+                  >
+                    {svc}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
