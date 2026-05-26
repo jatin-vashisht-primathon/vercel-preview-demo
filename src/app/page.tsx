@@ -353,22 +353,28 @@ export default function Home() {
       </section>
 
       {/* Community */}
-      <section className="bg-[#F7F9FC] py-16 sm:py-20 md:py-24">
+      <section className="bg-white py-16 sm:py-20 md:py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Interact With Peers and Professionals On a Variety of Topics"
-            subtitle="From online yoga sessions to nutrition advice, learn from experts and engage with fellow members. Available to all family members."
-          />
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="mb-12 max-w-3xl lg:mb-16">
+            <h2 className="text-3xl font-medium leading-tight tracking-tight text-[#2C2738] sm:text-4xl md:text-[40px] md:leading-[48px]">
+              Interact With Peers and Professionals On a Variety of Topics
+            </h2>
+            <p className="mt-4 max-w-[835px] text-base font-medium leading-snug text-[#565656]">
+              From online yoga sessions to nutrition advice, learn from experts and engage with fellow members. Available to all family members.
+            </p>
+          </div>
+          <div className="flex flex-col gap-5 lg:flex-row lg:justify-between">
             {COMMUNITY_CARDS.map((c) => (
               <div
                 key={c.title}
-                className="flex flex-col items-start gap-5 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-black/5"
+                className="flex w-full flex-col overflow-hidden rounded-lg shadow-md"
               >
-                <h3 className="text-xl font-semibold text-zinc-900">{c.title}</h3>
-                <p className="text-base leading-7 text-zinc-600">{c.desc}</p>
-                <div className="mt-2 inline-flex h-20 w-20 items-center justify-center rounded-full bg-[#EAF2FB] text-[#4A90E2]">
-                  {c.icon}
+                <div className="relative h-full w-full bg-[#4A90E2] px-10 pb-14 pt-8 text-white">
+                  <h3 className="mb-4 text-xl font-bold">{c.title}</h3>
+                  <p className="w-4/5 text-xs leading-snug opacity-80">{c.desc}</p>
+                  <div className="pointer-events-none absolute -bottom-3 -right-2 h-32 w-32 text-white [&_svg]:h-full [&_svg]:w-full">
+                    {c.icon}
+                  </div>
                 </div>
               </div>
             ))}
