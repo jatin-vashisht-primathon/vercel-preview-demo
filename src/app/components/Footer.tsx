@@ -57,23 +57,57 @@ function MapIcon() {
 
 function FacebookIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
-      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 16.84 5.44 20.87 10 21.8V15H8V12H10V9.5C10 7.57 11.57 6 13.5 6H16V9H14C13.45 9 13 9.45 13 10V12H16V15H13V21.95C18.05 21.45 22 17.19 22 12Z" />
     </svg>
   );
 }
 
 function InstagramIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 102 102" aria-hidden="true">
+      <defs>
+        <radialGradient
+          id="care41-ig-a"
+          cx="6.601"
+          cy="99.766"
+          r="129.502"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset=".09" stopColor="#fa8f21" />
+          <stop offset=".78" stopColor="#d82d7e" />
+        </radialGradient>
+        <radialGradient
+          id="care41-ig-b"
+          cx="70.652"
+          cy="96.49"
+          r="113.963"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset=".64" stopColor="#8c3aaa" stopOpacity="0" />
+          <stop offset="1" stopColor="#8c3aaa" />
+        </radialGradient>
+      </defs>
+      <path
+        fill="url(#care41-ig-a)"
+        d="M25.865,101.639A34.341,34.341,0,0,1,14.312,99.5a19.329,19.329,0,0,1-7.154-4.653A19.181,19.181,0,0,1,2.5,87.694,34.341,34.341,0,0,1,.364,76.142C.061,69.584,0,67.617,0,51s.067-18.577.361-25.14A34.534,34.534,0,0,1,2.5,14.312,19.4,19.4,0,0,1,7.154,7.154,19.206,19.206,0,0,1,14.309,2.5,34.341,34.341,0,0,1,25.862.361C32.422.061,34.392,0,51,0s18.577.067,25.14.361A34.534,34.534,0,0,1,87.691,2.5a19.254,19.254,0,0,1,7.154,4.653A19.267,19.267,0,0,1,99.5,14.309a34.341,34.341,0,0,1,2.14,11.553c.3,6.563.361,8.528.361,25.14s-.061,18.577-.361,25.14A34.5,34.5,0,0,1,99.5,87.694,20.6,20.6,0,0,1,87.691,99.5a34.342,34.342,0,0,1-11.553,2.14c-6.557.3-8.528.361-25.14.361s-18.577-.058-25.134-.361"
+      />
+      <path
+        fill="url(#care41-ig-b)"
+        d="M25.865,101.639A34.341,34.341,0,0,1,14.312,99.5a19.329,19.329,0,0,1-7.154-4.653A19.181,19.181,0,0,1,2.5,87.694,34.341,34.341,0,0,1,.364,76.142C.061,69.584,0,67.617,0,51s.067-18.577.361-25.14A34.534,34.534,0,0,1,2.5,14.312,19.4,19.4,0,0,1,7.154,7.154,19.206,19.206,0,0,1,14.309,2.5,34.341,34.341,0,0,1,25.862.361C32.422.061,34.392,0,51,0s18.577.067,25.14.361A34.534,34.534,0,0,1,87.691,2.5a19.254,19.254,0,0,1,7.154,4.653A19.267,19.267,0,0,1,99.5,14.309a34.341,34.341,0,0,1,2.14,11.553c.3,6.563.361,8.528.361,25.14s-.061,18.577-.361,25.14A34.5,34.5,0,0,1,99.5,87.694,20.6,20.6,0,0,1,87.691,99.5a34.342,34.342,0,0,1-11.553,2.14c-6.557.3-8.528.361-25.14.361s-18.577-.058-25.134-.361"
+      />
+      <path
+        fill="#fff"
+        d="M461.114,477.413a12.631,12.631,0,1,1,12.629,12.632,12.631,12.631,0,0,1-12.629-12.632m-6.829,0a19.458,19.458,0,1,0,19.458-19.458,19.457,19.457,0,0,0-19.458,19.458m35.139-20.229a4.547,4.547,0,1,0,4.549-4.545h0a4.549,4.549,0,0,0-4.547,4.545m-30.99,51.074a20.943,20.943,0,0,1-7.037-1.3,12.547,12.547,0,0,1-7.193-7.19,20.923,20.923,0,0,1-1.3-7.037c-.184-3.994-.22-5.194-.22-15.313s.04-11.316.22-15.314a21.082,21.082,0,0,1,1.3-7.037,12.54,12.54,0,0,1,7.193-7.193,20.924,20.924,0,0,1,7.037-1.3c3.994-.184,5.194-.22,15.309-.22s11.316.039,15.314.221a21.082,21.082,0,0,1,7.037,1.3,12.541,12.541,0,0,1,7.193,7.193,20.926,20.926,0,0,1,1.3,7.037c.184,4,.22,5.194.22,15.314s-.037,11.316-.22,15.314a21.023,21.023,0,0,1-1.3,7.037,12.547,12.547,0,0,1-7.193,7.19,20.925,20.925,0,0,1-7.037,1.3c-3.994.184-5.194.22-15.314.22s-11.316-.037-15.309-.22m-.314-68.509a27.786,27.786,0,0,0-9.2,1.76,19.373,19.373,0,0,0-11.083,11.083,27.794,27.794,0,0,0-1.76,9.2c-.187,4.04-.229,5.332-.229,15.623s.043,11.582.229,15.623a27.793,27.793,0,0,0,1.76,9.2,19.374,19.374,0,0,0,11.083,11.083,27.813,27.813,0,0,0,9.2,1.76c4.042.184,5.332.229,15.623.229s11.582-.043,15.623-.229a27.8,27.8,0,0,0,9.2-1.76,19.374,19.374,0,0,0,11.083-11.083,27.716,27.716,0,0,0,1.76-9.2c.184-4.043.226-5.332.226-15.623s-.043-11.582-.226-15.623a27.786,27.786,0,0,0-1.76-9.2,19.379,19.379,0,0,0-11.08-11.083,27.748,27.748,0,0,0-9.2-1.76c-4.041-.185-5.332-.229-15.621-.229s-11.583.043-15.626.229"
+        transform="translate(-422.637 -426.196)"
+      />
     </svg>
   );
 }
 
 export default function Footer() {
   return (
-    <footer className="mt-20 w-full bg-[#F7F9FC] text-zinc-800">
+    <footer className="mt-20 w-full bg-white text-zinc-800">
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
@@ -86,7 +120,7 @@ export default function Footer() {
                 className="h-14 w-auto"
               />
             </Link>
-            <p className="mt-6 text-sm leading-7 text-zinc-600">
+            <p className="mt-6 max-w-[400px] text-[14px] font-semibold leading-relaxed text-gray-600">
               Our mission is to tap into the utmost potential of human expertise,
               technology, and compassion to ensure the vitality of our aging loved
               ones while easing the burden on their families.
@@ -95,7 +129,7 @@ export default function Footer() {
 
           <div className="lg:col-span-3">
             <h3 className="text-base font-semibold text-zinc-900">Our Services</h3>
-            <ul className="mt-5 space-y-2 text-sm">
+            <ul className="mt-5 grid grid-cols-1 gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
               {SERVICES.map((svc) => (
                 <li key={svc}>
                   <a
@@ -165,13 +199,13 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-6 flex items-center gap-5">
               <a
                 href="https://www.facebook.com/people/Care41/61578788154082/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#4A90E2] shadow-sm transition-colors hover:bg-[#4A90E2] hover:text-white"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#4A90E2] text-white transition-colors hover:bg-blue-600"
               >
                 <FacebookIcon />
               </a>
@@ -180,7 +214,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#4A90E2] shadow-sm transition-colors hover:bg-[#4A90E2] hover:text-white"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#4A90E2] text-white transition-colors hover:bg-blue-600"
               >
                 <InstagramIcon />
               </a>
@@ -189,20 +223,22 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-black/5">
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-zinc-600 sm:flex-row sm:px-6 lg:px-8">
-          <div className="flex items-center gap-6">
-            <Link
-              href="/terms-and-conditions"
-              className="hover:text-[#4A90E2]"
-            >
-              Terms and Conditions
-            </Link>
-            <Link href="/privacy-policy" className="hover:text-[#4A90E2]">
-              Privacy Policy
-            </Link>
-          </div>
-          <p>© {new Date().getFullYear()} All Rights Reserved · Care41</p>
+      <div className="border-t border-gray-200">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-zinc-600 md:flex-row sm:px-6 lg:px-8">
+          <Link
+            href="/terms-and-conditions"
+            className="transition-colors hover:text-[#4A90E2]"
+          >
+            Terms and Conditions
+          </Link>
+          <Link
+            href="/privacy-policy"
+            className="transition-colors hover:text-[#4A90E2]"
+          >
+            Privacy Policy
+          </Link>
+          <p>© {new Date().getFullYear()} All Rights Reserved</p>
+          <p>Care41</p>
         </div>
       </div>
     </footer>
