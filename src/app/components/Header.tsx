@@ -1,13 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const NAV_LINKS = [
   { label: "Home", href: "#" },
-  { label: "About", href: "#" },
+  { label: "About", href: "/about" },
+  { label: "About 2", href: "/about-2" },
   { label: "Contact", href: "#" },
   { label: "Support", href: "#" },
 ];
+
+const isRoute = (href: string) => href.startsWith("/");
 
 function Logo() {
   return (
@@ -80,17 +84,28 @@ export default function Header() {
 
         <nav aria-label="Primary" className="hidden sm:block">
           <ul className="flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  onClick={handleInertLink}
-                  className="text-sm font-medium text-zinc-700 transition-colors hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-zinc-50"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) =>
+              isRoute(link.href) ? (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm font-medium text-zinc-700 transition-colors hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-zinc-50"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ) : (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    onClick={handleInertLink}
+                    className="text-sm font-medium text-zinc-700 transition-colors hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-zinc-50"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </nav>
 
@@ -167,20 +182,32 @@ export default function Header() {
         </div>
         <nav aria-label="Mobile primary" className="flex-1 overflow-y-auto px-2 py-4">
           <ul className="flex flex-col gap-1">
-            {NAV_LINKS.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  onClick={(event) => {
-                    handleInertLink(event);
-                    setOpen(false);
-                  }}
-                  className="block rounded-md px-3 py-3 text-base font-medium text-zinc-800 hover:bg-black/[.04] dark:text-zinc-200 dark:hover:bg-white/[.06]"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) =>
+              isRoute(link.href) ? (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-md px-3 py-3 text-base font-medium text-zinc-800 hover:bg-black/[.04] dark:text-zinc-200 dark:hover:bg-white/[.06]"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ) : (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    onClick={(event) => {
+                      handleInertLink(event);
+                      setOpen(false);
+                    }}
+                    className="block rounded-md px-3 py-3 text-base font-medium text-zinc-800 hover:bg-black/[.04] dark:text-zinc-200 dark:hover:bg-white/[.06]"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </nav>
       </aside>
