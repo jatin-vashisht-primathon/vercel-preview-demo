@@ -268,7 +268,7 @@ export default function Home() {
                     {svc.desc}
                   </p>
                 </div>
-                <div className="absolute bottom-4 right-4 flex h-28 w-28 items-center justify-center text-[#B2C2E1] transition-all duration-300 group-hover:scale-110 group-hover:text-[#83D591] [&_svg]:h-full [&_svg]:w-full">
+                <div className="absolute bottom-0 right-0 flex h-2/3 w-2/3 items-center justify-center text-[#B2C2E1] transition-transform duration-300 group-hover:scale-110 group-hover:text-[#83D591] [&_svg]:h-full [&_svg]:w-full">
                   {svc.icon}
                 </div>
               </div>
