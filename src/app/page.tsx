@@ -308,12 +308,15 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 sm:py-20 md:py-24">
+      <section className="bg-[#F5F5F5] py-16 sm:py-20 md:py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading title="Hear From Our Members" />
-          <div className="mt-12">
-            <TestimonialsCarousel />
-          </div>
+        </div>
+        {/* Carousel sits outside the max-w-7xl wrapper so its own max-w-[82rem]
+            controls the track width — matching care41.net's 564px desktop cards
+            (CAR41-327 iter-2). */}
+        <div className="mt-12">
+          <TestimonialsCarousel />
         </div>
       </section>
 
