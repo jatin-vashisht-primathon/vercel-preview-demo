@@ -86,7 +86,7 @@ function Carousel({ visibleCount, className }: { visibleCount: number; className
 
   return (
     <div
-      className={`relative mx-auto w-full max-w-[90rem] px-12 sm:px-14 lg:px-16 ${className ?? ""}`}
+      className={`relative mx-auto w-full max-w-[82rem] px-12 sm:px-14 md:px-16 lg:px-20 ${className ?? ""}`}
       role="region"
       aria-roledescription="carousel"
       aria-label="Member testimonials"
