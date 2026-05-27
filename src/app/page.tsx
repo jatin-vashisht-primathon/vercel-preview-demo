@@ -308,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 sm:py-20 md:py-24">
+      <section className="bg-[#F5F5F5] py-16 sm:py-20 md:py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading title="Hear From Our Members" />
           <div className="mt-12">

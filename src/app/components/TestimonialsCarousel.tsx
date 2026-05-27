@@ -32,7 +32,7 @@ const TESTIMONIALS: Testimonial[] = [
 
 function ChevronLeft() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden="true">
       <polyline points="15 18 9 12 15 6" />
     </svg>
   );
@@ -40,86 +40,110 @@ function ChevronLeft() {
 
 function ChevronRight() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden="true">
       <polyline points="9 18 15 12 9 6" />
     </svg>
   );
 }
 
-export default function TestimonialsCarousel() {
-  const [index, setIndex] = useState(0);
-
-  const prev = () => setIndex((i) => (i === 0 ? TESTIMONIALS.length - 1 : i - 1));
-  const next = () => setIndex((i) => (i === TESTIMONIALS.length - 1 ? 0 : i + 1));
-
-  const current = TESTIMONIALS[index];
-
+function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <div className="relative mx-auto w-full max-w-5xl">
-      <div className="grid grid-cols-1 items-center gap-8 rounded-3xl bg-white p-6 shadow-lg ring-1 ring-black/5 md:grid-cols-2 md:gap-12 md:p-12">
-        <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-zinc-100">
-          <Image
-            src={current.image}
-            alt={current.name}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-          />
-        </div>
-
-        <div className="flex flex-col justify-center">
-          <svg
-            className="mb-4 h-10 w-10 text-[#4A90E2]"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
-          </svg>
-          <p className="text-base leading-7 text-zinc-700 md:text-lg md:leading-8">
-            {current.quote}
-          </p>
-          <p className="mt-6 text-base font-semibold text-[#4A90E2]">
-            {current.name}
-          </p>
-        </div>
+    <div className="flex h-full w-full flex-col items-stretch overflow-hidden rounded-[10px] bg-white md:flex-row">
+      <div className="relative h-48 w-full flex-shrink-0 bg-zinc-100 md:h-auto md:min-h-[250px] md:w-[40%]">
+        <Image
+          src={testimonial.image}
+          alt={testimonial.name}
+          fill
+          sizes="(max-width: 768px) 100vw, 40vw"
+          className="object-cover object-center"
+        />
       </div>
 
-      <div className="mt-6 flex items-center justify-center gap-4">
-        <button
-          type="button"
-          onClick={prev}
-          aria-label="Previous slide"
-          className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 shadow-sm transition-colors hover:bg-[#4A90E2] hover:text-white"
-        >
-          <ChevronLeft />
-        </button>
-
-        <div className="flex items-center gap-2" role="tablist" aria-label="Testimonial selector">
-          {TESTIMONIALS.map((t, i) => (
-            <button
-              key={t.name}
-              type="button"
-              role="tab"
-              aria-selected={i === index}
-              aria-label={`Show testimonial ${i + 1}`}
-              onClick={() => setIndex(i)}
-              className={`h-2 rounded-full transition-all ${
-                i === index ? "w-8 bg-[#4A90E2]" : "w-2 bg-zinc-300"
-              }`}
-            />
-          ))}
+      <div className="flex min-h-[200px] flex-1 flex-col justify-center p-4 md:min-h-[250px] md:w-[60%] lg:pl-6 lg:pr-4 xl:pl-[50px] xl:pr-6">
+        <p className="break-words text-sm font-normal italic leading-[20px] tracking-[-0.011em] text-[#565656] md:text-base md:leading-[22px]">
+          {testimonial.quote}
+        </p>
+        <div className="mt-3 text-right text-sm font-semibold leading-[20px] tracking-[-0.011em] text-[#565656] md:mt-4 md:text-base md:leading-[22px]">
+          {testimonial.name}
         </div>
-
-        <button
-          type="button"
-          onClick={next}
-          aria-label="Next slide"
-          className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 shadow-sm transition-colors hover:bg-[#4A90E2] hover:text-white"
-        >
-          <ChevronRight />
-        </button>
       </div>
     </div>
+  );
+}
+
+const ARROW_CLASS =
+  "absolute top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#2C2738] bg-white text-[#2C2738] shadow-sm transition-colors hover:bg-[#2C2738] hover:text-white disabled:pointer-events-none disabled:opacity-50";
+
+function Carousel({ visibleCount, className }: { visibleCount: number; className?: string }) {
+  const [index, setIndex] = useState(0);
+
+  const maxIndex = Math.max(0, TESTIMONIALS.length - visibleCount);
+  const safeIndex = Math.min(index, maxIndex);
+  const step = 100 / visibleCount;
+
+  const prev = () => setIndex((i) => Math.max(0, Math.min(i, maxIndex) - 1));
+  const next = () => setIndex((i) => Math.min(maxIndex, i + 1));
+
+  return (
+    <div
+      className={`relative mx-auto w-full max-w-[90rem] px-12 sm:px-14 lg:px-16 ${className ?? ""}`}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Member testimonials"
+    >
+      <div className="overflow-hidden">
+        <div
+          className="flex -ml-4 items-stretch lg:-ml-6"
+          style={{
+            transform: `translate3d(-${safeIndex * step}%, 0, 0)`,
+            transition: "transform 0.5s ease",
+          }}
+        >
+          {TESTIMONIALS.map((testimonial, i) => (
+            <div
+              key={testimonial.name}
+              className="flex min-w-0 shrink-0 grow-0 pl-4 lg:pl-6"
+              style={{ flexBasis: `${step}%` }}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${i + 1} of ${TESTIMONIALS.length}`}
+            >
+              <TestimonialCard testimonial={testimonial} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <button
+        type="button"
+        onClick={prev}
+        disabled={safeIndex <= 0}
+        aria-label="Previous testimonial"
+        className={`${ARROW_CLASS} left-0`}
+      >
+        <ChevronLeft />
+      </button>
+
+      <button
+        type="button"
+        onClick={next}
+        disabled={safeIndex >= maxIndex}
+        aria-label="Next testimonial"
+        className={`${ARROW_CLASS} right-0`}
+      >
+        <ChevronRight />
+      </button>
+    </div>
+  );
+}
+
+export default function TestimonialsCarousel() {
+  return (
+    <>
+      {/* Mobile / tablet: one card at a time (matches care41.net below lg) */}
+      <Carousel visibleCount={1} className="lg:hidden" />
+      {/* Desktop: two cards at a time (matches care41.net at lg+) */}
+      <Carousel visibleCount={2} className="hidden lg:block" />
+    </>
   );
 }
