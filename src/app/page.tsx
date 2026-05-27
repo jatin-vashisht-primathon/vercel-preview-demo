@@ -383,10 +383,15 @@ export default function Home() {
       {/* FAQs */}
       <section className="bg-[#F7F9FC] py-16 sm:py-20 md:py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Here Are Some FAQs That Come to Mind for Our Clients"
-            subtitle="Our Account Management Team is available 24/7 to address any questions or concerns you may have."
-          />
+          <div className="max-w-3xl text-left">
+            <h2 className="text-3xl font-medium leading-tight text-[#2C2738] sm:text-4xl md:text-[40px] md:leading-[48px]">
+              Here Are Some FAQs That Come to Mind for Our Clients
+            </h2>
+            <p className="mt-5 text-base leading-7 text-zinc-600 md:text-lg md:leading-8">
+              Our Account Management Team is available 24/7 to address any
+              questions or concerns you may have.
+            </p>
+          </div>
           <div className="mt-12">
             <FaqAccordion />
           </div>
