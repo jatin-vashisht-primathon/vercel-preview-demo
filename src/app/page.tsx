@@ -2,6 +2,7 @@ import Image from "next/image";
 import ContactForm from "./components/ContactForm";
 import TestimonialsCarousel from "./components/TestimonialsCarousel";
 import FaqAccordion from "./components/FaqAccordion";
+import TakeFirstStepSection from "./components/TakeFirstStepSection";
 
 const CORE_SERVICES = [
   {
@@ -351,34 +352,7 @@ export default function Home() {
       </section>
 
       {/* CTA Contact */}
-      <section className="py-16 sm:py-20 md:py-24">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-zinc-100">
-              <Image
-                src="/care41/home_contact_old_couple.png"
-                alt="Contact Person Image"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl font-medium leading-tight text-[#2C2738] sm:text-4xl md:text-[40px] md:leading-[48px]">
-                Take the First Step to Set Up a Personalized Caregiving Solution
-                for Your Family.
-              </h2>
-              <p className="mt-5 text-base leading-7 text-zinc-600 md:text-lg">
-                We appreciate you taking the time to send us a request. A Care41
-                Account Manager will be in touch shortly.
-              </p>
-              <div className="mt-8">
-                <ContactForm idPrefix="cta" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TakeFirstStepSection />
 
       {/* FAQs */}
       <section className="bg-[#F7F9FC] py-16 sm:py-20 md:py-24">
