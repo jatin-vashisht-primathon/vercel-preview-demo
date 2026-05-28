@@ -10,6 +10,44 @@ type Member = {
   bio: string;
 };
 
+type Partner = {
+  name: string;
+  role: string;
+  image: string;
+  description: string;
+};
+
+const PARTNERS: Partner[] = [
+  {
+    name: "PHE Healthcare",
+    role: "Partner - Medical Provider: Comprehensive Senior Care",
+    image: "/care41/partner_phe.png",
+    description:
+      "PHE is a unique primary healthcare delivery mode, transforming your primary care experience by being the 1 stop for all your health needs before or after hospitalization. Their uniqueness lies in a standout phygital delivery model of a primary healthcare team being available to the patient at the clinic, at home, and online. Family physicians are frontline players who coordinate & maintain continuity of care throughout the patient’s health journey using a proactive monitoring approach to ensure early detection, timely intervention and better long term clinical outcomes. PHE’s team manages the medical care at home as much as possible so hospital admissions and duration of stay can be minimized. As part of E-care, PHE is working on a mobile application for early diagnosis and chronic monitoring of the common non-communicable diseases.",
+  },
+  {
+    name: "Fund Horizon LLP, Abhijit Mahapatra",
+    role: "Partner - Financial Advisory",
+    image: "/care41/partner_fund_horizon.jpg",
+    description:
+      "Fund Horizon is a premier mutual fund distribution company dedicated to empowering clients with tailored wealth creation and financial planning solutions. Founded by seasoned professionals with over 15 years of experience in financial planning and wealth management, our partners bring expertise from leading institutions such as HDFC Bank Private Banking, Kotak Privy Banking, Citigold Wealth Management, Standard Chartered Priority Banking, and SBI Wealth Management. At Fund Horizon, we offer a comprehensive suite of services, including mutual fund investments, portfolio management, retirement planning, tax-saving solutions, and goal-based financial planning. Our client-centric approach, backed by deep industry knowledge, ensures personalized strategies to help you achieve your financial aspirations with confidence.",
+  },
+  {
+    name: "Sandhya Bolar",
+    role: "Partner - Yoga Instructor",
+    image: "/care41/partner_yoga.png",
+    description:
+      "Sandhya Bolar is a certified yoga instructor passionate about holistic well-being. She specializes in gentle, mindful practices tailored for seniors to improve mobility, relaxation, and balance. Offering in-home and virtual sessions, her services include chair yoga, breath work, Yog Nidra, and simple techniques for stress, sleep, and digestion. Sandhya holds a 200-hour YTT and Bilva Yoga certification, with expertise in Hatha, Restorative Yoga, and Pranayama. Her mission is to bring ease, warmth, and confidence through the healing power of yoga.",
+  },
+  {
+    name: "Dhirendra Kalghatgi",
+    role: "Digicom - Tech Support",
+    image: "/care41/partner_digicom.jpg",
+    description:
+      "‘Digicom’, co-founded in 1998 and with 26 years of experience, we provide customized office and home CCTV, Security solutions, automation solutions in Communication and IT. Our biggest strength today is our ability to provide customised solutions to each of our customers. We have successfully completed prestigious and critical assignments of providing CCTV surveillance for India’s largest Diamond & Gold Jewellery Exhibition - IIJS, conducted by The Gem & Jewellery Export Promotion Council. We also provide our services to Police Department, BARC, Banks etc.",
+  },
+];
+
 const LEADERSHIP: Member[] = [
   {
     name: "Niharika Shah",
@@ -30,6 +68,31 @@ const LEADERSHIP: Member[] = [
     bio: "I’m a Mumbai-based legal professional with a strong foundation in civil and commercial litigation. I have been actively practicing in the field, handling a wide range of disputes while also exploring opportunities in business development. I am passionate about combining legal strategy with commercial insight to help clients navigate complex issues and achieve practical outcomes. Always looking to connect, collaborate, and grow. Along the way, a need arose to ensure a more systematic way to take care of elders was in place. Collectively bringing all the service providers together and creating an easier means to connect and coordinate made the process of caregiving a lot better for the caregivers. Once conceived, Care41 helped integrate all that we had envisioned.",
   },
 ];
+
+function PartnerCard({ partner }: { partner: Partner }) {
+  return (
+    <article className="w-full max-w-[577px] overflow-hidden rounded-lg bg-white shadow-[0px_0px_20px_4px_rgba(0,0,0,0.08)]">
+      <div className="relative mx-auto mt-4 aspect-[545/312] w-full max-w-[545px] overflow-hidden rounded-lg">
+        <Image
+          src={partner.image}
+          alt={partner.name}
+          fill
+          sizes="(max-width: 768px) 100vw, 545px"
+          className="object-contain"
+        />
+      </div>
+      <div className="px-7 py-6">
+        <h3 className="mb-1 text-2xl font-semibold text-[#1D1F1E]">
+          {partner.name}
+        </h3>
+        <p className="mb-4 text-lg font-medium text-[#6B7280]">{partner.role}</p>
+        <p className="text-base font-medium leading-[25px] text-[#6B7280]">
+          {partner.description}
+        </p>
+      </div>
+    </article>
+  );
+}
 
 function MemberCard({ member }: { member: Member }) {
   return (
@@ -121,12 +184,10 @@ export default function TeamTabs() {
         hidden={tab !== "partners"}
         className="mt-12"
       >
-        <div className="flex min-h-[240px] items-center justify-center rounded-2xl bg-zinc-50 px-6 py-16 text-center">
-          <p className="max-w-md text-base text-zinc-600">
-            We work alongside a growing network of trusted partners spanning
-            healthcare, finance, home services and wellbeing. More partner
-            details coming soon.
-          </p>
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch justify-center gap-10 sm:gap-12 md:grid-cols-2 md:gap-x-12 md:gap-y-16 lg:gap-20">
+          {PARTNERS.map((p) => (
+            <PartnerCard key={p.name} partner={p} />
+          ))}
         </div>
       </div>
     </div>
