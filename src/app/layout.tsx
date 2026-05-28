@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import ChromeShell from "./components/ChromeShell";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./globals.css";
@@ -38,9 +39,13 @@ export default function RootLayout({
       className={`${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white font-sans text-zinc-900">
-        <Header />
+        <ChromeShell>
+          <Header />
+        </ChromeShell>
         {children}
-        <Footer />
+        <ChromeShell>
+          <Footer />
+        </ChromeShell>
       </body>
     </html>
   );
