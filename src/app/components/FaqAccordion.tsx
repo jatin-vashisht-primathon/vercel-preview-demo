@@ -54,7 +54,7 @@ export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-4">
+    <div className="w-full space-y-4">
       {FAQS.map((faq, i) => {
         const isOpen = openIndex === i;
         const panelId = `faq-panel-${i}`;
@@ -81,10 +81,16 @@ export default function FaqAccordion() {
               id={panelId}
               role="region"
               aria-labelledby={buttonId}
-              hidden={!isOpen}
-              className="px-6 pb-6 text-base leading-7 text-zinc-600"
+              aria-hidden={!isOpen}
+              className={`grid transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none ${
+                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+              }`}
             >
-              {faq.a}
+              <div className="min-h-0 overflow-hidden">
+                <div className="px-6 pb-6 text-base leading-7 text-zinc-600">
+                  {faq.a}
+                </div>
+              </div>
             </div>
           </div>
         );
