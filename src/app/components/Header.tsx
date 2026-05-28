@@ -196,7 +196,7 @@ export default function Header() {
                 <WhatsAppIcon className="h-6 w-6" />
               </a>
               <Link
-                href="/login"
+                href="/auth/signin"
                 className="inline-flex h-9 items-center justify-center rounded-lg bg-[#4A90E2] px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#3A7BC8]"
               >
                 Sign In
@@ -289,7 +289,7 @@ export default function Header() {
           </div>
 
           <Link
-            href="/login"
+            href="/auth/signin"
             onClick={() => setOpen(false)}
             className="mt-6 flex h-9 w-full items-center justify-center rounded-lg bg-[#4A90E2] px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#3A7BC8]"
           >
