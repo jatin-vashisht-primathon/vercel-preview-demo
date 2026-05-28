@@ -22,13 +22,14 @@ function isActive(pathname: string | null, href: string) {
 
 function Logo() {
   return (
-    <Link href="/" aria-label="Care41 home" className="flex items-center">
+    <Link href="/" aria-label="Google home" className="flex items-center">
       <Image
-        src="/care41/logo.png"
-        alt="Care41 Logo"
-        width={94}
+        src="/google-logo.svg"
+        alt="Google"
+        width={139}
         height={47}
         priority
+        unoptimized
         className="h-[47px] w-auto"
       />
     </Link>
